@@ -1,0 +1,46 @@
+---
+output: rmarkdown::github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE, message=FALSE, }
+knitr::opts_chunk$set(collapse=TRUE, comment="##", fig.retina=2, fig.path = "README_figs/README-")
+library(tidyverse)
+```
+
+## `panelAppR`: An R package to intefrace with the PanelApp API
+
+### Installation
+```{r, eval=FALSE}
+devtools::install_github("bahlolab/panelappR")
+```
+
+### Usage
+
+* Both [PanelApp Australia](https://panelapp.agha.umccr.org/) and [Genomics England PanelApp](https://panelapp.genomicsengland.co.uk/) are available. To access PanelApp Australia use `db = 'AGHA'`, and for Genomics England use `db = 'GE'`.
+* The function `list_panels` lists all available panels from a given source.
+* The function `get_panel` retrieves a specific panel by id.
+
+```{r example_1}
+panelappR::list_panels(db = 'AGHA') %>% 
+  head()
+```
+
+```{r example_2}
+panelappR::get_panel(id = 3149, db = 'AGHA') %>% 
+  head()
+```
+
+```{r example_3}
+panelappR::list_panels(db = 'GE') %>% 
+  head()
+```
+```{r example_4}
+panelappR::get_panel(id = 933, db = 'GE') %>% 
+  head()
+```
+### Not (Yet) Implemented
+
+* Error checking (i.e. attempt to retrieve a non-existant panel)
+* Version specific queries - currently only the latest version of a panel is returned

@@ -1,0 +1,19 @@
+Package: panelappR
+Type: Package
+Title: R package to intefrace with Panel App API
+Version: 0.1.0
+Author: Jacob Munro
+Maintainer: Jacob Munro <jacob.e.munro@gmail.com>
+Description: R package to intefrace with Panel App API
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    dplyr,
+    magrittr,
+    httr,
+    jsonlite,
+    tidyr,
+    purrr,
+    rlang
+RoxygenNote: 7.1.1
